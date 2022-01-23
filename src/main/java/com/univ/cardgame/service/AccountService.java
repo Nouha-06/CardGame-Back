@@ -52,7 +52,7 @@ public class AccountService implements UserDetailsService {
         newUserEntity.setPassword(userDTO.getPassword());
         newUserEntity.setUserName(userDTO.getFirst_name() + userDTO.getLast_name());
         List<RoleEnum> roles = new ArrayList<>();
-        roles.add(RoleEnum.ROLE_VISITOR);
+        roles.add(RoleEnum.ROLE_PLAYER);
 
         newUserEntity.setRoles(roles);
         newUserEntity.setPassword(bcryptEncoder.encode(userDTO.getPassword()));
