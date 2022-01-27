@@ -1,7 +1,6 @@
 package com.univ.cardgame.util.card;
 
 public enum CardValue {
-    AS("a"),
     TWO("2"),
     THREE("3"),
     FOUR("4"),
@@ -11,13 +10,18 @@ public enum CardValue {
     EIGHT("8"),
     NINE("9"),
     TEN("10"),
-    JACK("J"),
-    QUEEN("Q"),
-    KING("K");
+    JACK("j"),
+    QUEEN("q"),
+    KING("k"),
+    AS("a");
 
-    public final String label;
+    private final String label;
 
-    private CardValue(String label) {
+    CardValue(String label) {
         this.label = label;
+    }
+
+    public String getLabel() {
+        return label;
     }
 }

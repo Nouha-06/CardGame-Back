@@ -11,4 +11,8 @@ public enum CardColor {
     private CardColor(String label) {
         this.label = label;
     }
+
+    public String getLabel() {
+        return this.label;
+    }
 }

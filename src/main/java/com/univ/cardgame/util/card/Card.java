@@ -3,12 +3,12 @@ package com.univ.cardgame.util.card;
 public class Card {
     private final CardValue value;
     private final CardColor color;
-    private String picture;
+    private final String label;
 
     public Card(CardValue cardValue, CardColor cardColor) {
         this.value = cardValue;
         this.color = cardColor;
-        this.picture = pictureValue(cardValue, cardColor);
+        this.label = cardColor.getLabel() + "-" + cardValue.getLabel();
     }
 
     public CardValue getValue() {
@@ -18,6 +18,8 @@ public class Card {
     public CardColor getColor() {
         return color;
     }
+
+    public String getLabel() { return label; }
 
 
     @Override
@@ -39,9 +41,5 @@ public class Card {
         Card card = (Card) o;
         if (value != card.value) return false;
         return color == card.color;
-    }
-
-    private String pictureValue(CardValue cardValue, CardColor cardColor) {
-        return cardColor.label + "-" + cardValue.label + ".svg";
     }
 }
